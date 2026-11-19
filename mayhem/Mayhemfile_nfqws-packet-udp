@@ -1,0 +1,11 @@
+project: savantenvs/zapret
+target: nfqws-packet-udp
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/nfqws-packet-udp/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/nfqws-packet-udp
+    libfuzzer: true
+    timeout: 5

@@ -1,0 +1,11 @@
+project: savantenvs/zapret
+target: nfqws-hostlist
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/nfqws-hostlist/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/nfqws-afl --qnum=200 --dry-run --hostlist @@
+    afl: true
+    timeout: 5

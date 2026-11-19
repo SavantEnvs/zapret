@@ -1,0 +1,11 @@
+project: savantenvs/zapret
+target: ip2net
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/ip2net/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/ip2net
+    libfuzzer: true
+    timeout: 5

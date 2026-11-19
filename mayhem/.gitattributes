@@ -1,0 +1,3 @@
+# seeds and golden files are byte-exact (the repo root sets text=auto eol=lf)
+*/testsuite/** binary
+tests/** binary

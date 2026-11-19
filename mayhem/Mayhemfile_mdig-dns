@@ -1,0 +1,11 @@
+project: savantenvs/zapret
+target: mdig-dns
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/mdig-dns/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/mdig-dns
+    libfuzzer: true
+    timeout: 5

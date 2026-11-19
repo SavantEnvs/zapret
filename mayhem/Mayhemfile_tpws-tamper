@@ -1,0 +1,11 @@
+project: savantenvs/zapret
+target: tpws-tamper
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/tpws-tamper/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/tpws-tamper
+    libfuzzer: true
+    timeout: 5

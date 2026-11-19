@@ -1,0 +1,11 @@
+project: savantenvs/zapret
+target: nfqws-fake-tls
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/nfqws-fake-tls/testsuite
+
+cmds:
+  - cmd: /mayhem/mayhem/out/nfqws-afl --qnum=200 --dry-run --dpi-desync=fake --dpi-desync-fake-tls @@ --dpi-desync-fake-tls-mod=rnd,rndsni,dupsid,padencap,sni=example.com
+    afl: true
+    timeout: 5
